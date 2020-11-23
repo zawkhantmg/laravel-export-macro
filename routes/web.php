@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','Api\StudentController@show');
+Route::post('/export','Api\StudentController@export');
