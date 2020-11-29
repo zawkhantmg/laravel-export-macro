@@ -18,9 +18,12 @@ worksheet.write('E1', data1)
 
 worksheet.write('G1', data2)
 
+# Add the VBA project binary.
+workbook.add_vba_project('./vbaProject.bin')
+
 # Add a button tied to a macro in the VBA project.
-worksheet.insert_button('B3', {'macro': 'say_hello',
-                               'caption': 'Press Me',
+worksheet.insert_button('B6', {'macro': 'say_hello',
+                               'caption': 'ClickMe',
                                'width': 80,
                                'height': 30})
 
