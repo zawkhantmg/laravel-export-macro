@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Services\Student\StudentServiceInterface;
-use Log;
 
 class StudentController extends Controller
 {
@@ -33,21 +32,18 @@ class StudentController extends Controller
     {
         $datas = $this->studentService->getAllStudent();
         return view('welcome',compact('datas'));
-        
     }
 
     /**
-     * macro export
+     * export macro excel
      *
      * @return \Illuminate\Http\Response
      */
     public function export()
     {
-        $datas = $this->studentService->getAllStudent();
-        $email = $datas[0]->email;
-        $result = exec("python macro-export.py $email data");
+        $result = exec("python macro-export.py");
         echo $result;
-        $file_path = public_path('export-data.xlsm');
+        $file_path = public_path('macro.xlsm');
         return response()->download($file_path);
     }
 }
