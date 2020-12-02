@@ -4,6 +4,7 @@
 
 
 cat << "EOF"
+
  _____  __   __   ___   ___
 |__  /  | | / /  |   \_/   |
   / /   | |/ /   | |\   /| |
@@ -12,7 +13,38 @@ cat << "EOF"
 
  >> Project Repo : https://github.com/zawkhantmg/laravel-export-macro
  >> Scripted by : Zaw Khant Mg
+
+
 EOF
+
+function module() {
+        echo
+        pip install xlsxwriter
+        pip install openpyxl
+}
+function installPy() {
+        echo
+        echo "Please download and install python."
+        read -r -p "If you have install, confirm that you have install python [y/n] : " confirm
+        case "$confirm" in
+        [yY][eE][sS]|[yY])
+                module
+                ;;
+        *)
+                installPy
+                ;;
+        esac
+}
+
+read -r -p "Install python in your machine [y/n] : " response
+case "$response" in
+    [yY][eE][sS]|[yY])
+        module
+        ;;
+    *)
+        installPy
+        ;;
+esac
 
 function clone(){
 
