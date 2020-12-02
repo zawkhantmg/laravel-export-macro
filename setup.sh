@@ -11,7 +11,7 @@ cat << "EOF"
 /____|  |_| \_\  |_|     |_|
 
  >> Project Repo : https://github.com/zawkhantmg/laravel-export-macro
- >> Scripted by : Zaw Khant Maung
+ >> Scripted by : Zaw Khant Mg
 EOF
 
 function clone(){
@@ -22,12 +22,6 @@ function clone(){
         echo "Laravel-Export-Macro Setup Finished Successfully. Happy learning !"
 
 }
-
-# Define Color
-Cyan='\033[0;36m'
-NC='\033[0m' # No Color
-BOLD=$(tput bold)
-NORM=$(tput sgr0)
 
 # configuring mysql for Laravel-Export-Macro
 echo -n "Enter mysql username : "
