@@ -25,6 +25,12 @@ function module() {
 function installPy() {
         echo
         echo "Please download and install python."
+        read -r -p "Do you want to go to py download page [y/n] : " gotourl
+        case "$gotourl" in
+        [yY][eE][sS]|[yY])
+                start https://www.python.org/downloads/
+                ;;
+        esac
         read -r -p "If you have install, confirm that you have install python [y/n] : " confirm
         case "$confirm" in
         [yY][eE][sS]|[yY])
