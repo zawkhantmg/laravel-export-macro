@@ -34,6 +34,7 @@ echo -n "Enter mysql username : "
 read uname
 echo -n "Enter mysql password : "
 read -s pass
+echo
 
 # copy .env file
 composer install
