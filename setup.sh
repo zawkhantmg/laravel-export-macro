@@ -15,12 +15,12 @@ cat << "EOF"
 EOF
 
 function clone(){
-        -i config.php
 
         #creating database
-        echo "Creating laravel-export-macro database"
-        mysql -u $uname -p$pass -e "CREATE DATABASE IF NOT EXISTS laravel-export-macro"
+        echo "Creating laravel_export_macro database"
+        mysql -u $uname -p$pass -e "CREATE DATABASE IF NOT EXISTS laravel_export_macro"
         echo "Laravel-Export-Macro Setup Finished Successfully. Happy learning !"
+
 }
 
 # Define Color
@@ -33,7 +33,7 @@ NORM=$(tput sgr0)
 echo -n "Enter mysql username : "
 read uname
 echo -n "Enter mysql password : "
-read pass
+read -s pass
 
 # copy .env file
 composer install
@@ -51,6 +51,5 @@ clone
 
 # database migrate and seeding
 php artisan migrate --seed
+start http://localhost:8000/
 php artisan serve
-
-echo -e "${Cyan}${BOLD}##### You can now access your project at http://localhost:8000/ :)${NC}${NORM}"

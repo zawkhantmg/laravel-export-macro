@@ -19,7 +19,7 @@ class StudentSeeder extends Seeder
 
         foreach (range(1, 10) as $index) {
             DB::table('students')->insert([
-                'roll-no' => $faker->randomDigit,
+                'roll_no' => $faker->randomDigit,
                 'name' => $faker->name,
                 'email' => $faker->unique()->userName . '@' . 'gmail.com',
                 'created_at' => $faker->dateTimeThisMonth($max = 'now', $timezone = null),
