@@ -21,6 +21,8 @@ function module() {
         echo
         pip install xlsxwriter
         pip install openpyxl
+        echo
+        echo
 }
 function installPy() {
         echo
@@ -31,15 +33,7 @@ function installPy() {
                 start https://www.python.org/downloads/
                 ;;
         esac
-        read -r -p "If you have install, confirm that you have install python [y/n] : " confirm
-        case "$confirm" in
-        [yY][eE][sS]|[yY])
-                module
-                ;;
-        *)
-                installPy
-                ;;
-        esac
+        exit
 }
 
 read -r -p "Install python in your machine [y/n] : " response
