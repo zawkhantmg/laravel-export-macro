@@ -19,14 +19,22 @@ EOF
 
 function module() {
         echo
-        pip install xlsxwriter
-        pip install openpyxl
+        alreadyPy=$(python --version)
+        case "${alreadyPy}" in
+        Python*)         
+                pip install xlsxwriter
+                pip install openpyxl
+                ;;
+        *)
+                installPy
+                ;;
+        esac
         echo
         echo
 }
 function installPy() {
         echo
-        echo "Please download and install python."
+        echo "You don't have python. Please download and install it."
         read -r -p "Do you want to go to py download page [y/n] : " gotourl
         case "$gotourl" in
         [yY][eE][sS]|[yY])
